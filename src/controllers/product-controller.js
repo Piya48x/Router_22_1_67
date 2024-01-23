@@ -5,11 +5,14 @@ exports.getProductsLanding = (req, res, next) => {
 }
 
 exports.getProducts = (req, res, next) => {
-    res.json({message: "Get Filtered Product"})
+    const {search, promotion, brand, category} = req.query;
+
+    res.json({search, promotion, brand, category})
 
 }
 
 exports.getProductById = (req, res, next) => {
-    res.json({message: "Get Product ById"})
+    const {productId} = req.params
+    res.json({productId})
 }
 
